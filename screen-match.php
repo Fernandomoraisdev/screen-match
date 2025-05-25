@@ -2,7 +2,7 @@
 
 echo "Bem vindo(a) ao screen-metch" .  PHP_EOL;
 
-$nomeFilme = "Top Gun - Mavrick";
+$nomeFilme = "Top Gun - Maverick";
 
 $anoLancamento = 2022;
 
