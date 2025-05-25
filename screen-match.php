@@ -11,6 +11,10 @@ function exibeMensagemLancamento($ano) {
     }
 }
 
+function incluidoNoPlano($planoPrime, $anoLancamento){
+    return $planoPrime || $anoLancamento < 2020;
+}
+
 // Mensagem de boas-vindas ao sistema
 echo "Bem vindo(a) ao screen-metch" . PHP_EOL;
 
@@ -34,7 +38,7 @@ $notaFilme = array_sum($notas) / $quantidadeDeNotas; // Soma todas as notas e di
 $planoPrime = true; // Poderia ser false também
 
 // Verifica se o filme está incluído no plano (lançado antes de 2020 OU usuário tem plano Prime)
-$incluidoNoPlano = $planoPrime || $anoLancamento < 2020;
+$incluidoNoPlano = incluidoNoPlano($planoPrime, $anoLancamento);
 
 // Exibe as informações básicas do filme
 echo "Nome do Filme: " . $nomeFilme . PHP_EOL;
