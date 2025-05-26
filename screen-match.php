@@ -1,7 +1,7 @@
 <?php
 
 // Função que exibe uma mensagem sobre o status de lançamento do filme baseado no ano
-function exibeMensagemLancamento($ano) {
+function exibeMensagemLancamento(int $ano): void { //diz que esse codigo nao retorna nada
     if ($ano > 2022) {
         echo "Esse filme e um lancamento" . PHP_EOL; // Se lançado após 2022
     } elseif ($ano > 2020 && $ano <= 2022) {
@@ -11,12 +11,12 @@ function exibeMensagemLancamento($ano) {
     }
 }
 
-function incluidoNoPlano($planoPrime, $anoLancamento){
+function incluidoNoPlano(bool $planoPrime, int $anoLancamento): bool {
     return $planoPrime || $anoLancamento < 2020;
 }
 
 // Mensagem de boas-vindas ao sistema
-echo "Bem vindo(a) ao screen-metch" . PHP_EOL;
+echo "Bem vindo(a) ao screen-match" . PHP_EOL;
 
 // Variáveis com informações básicas do filme
 $nomeFilme = "Top Gun - Maverick"; // Nome do filme que estamos avaliando
@@ -69,3 +69,15 @@ $filme = [
 
 // Exibe apenas o ano de lançamento do segundo filme
 echo $filme["ano"] . PHP_EOL;
+
+var_dump($notas);
+sort($notas);
+var_dump($notas);
+$menorNota = min($notas);
+echo $menorNota;
+
+var_dump($filme['nome']);
+$posicaoDoisPontos = strpos($filme['nome'], ':');
+var_dump($posicaoDoisPontos);
+
+var_dump(substr($filme['nome'], 0, $posicaoDoisPontos));
