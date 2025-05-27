@@ -45,12 +45,12 @@ $genero = match ($nomeFilme) {
 echo "O genero do filme e: $genero" . PHP_EOL;
 
 // Array associativo com informações de outro filme
-$filme = [
-    "nome" => "Thor: Ragnarok",   // Nome do filme
-    "ano" => 2021,                // Ano de lançamento
-    "nota" => 7.8,                // Nota do filme
-    "genero" => "super-heroi",    // Gênero do filme
-];
+$filme = criaFilme(
+    nome: "Thor: Ragnarok",
+    anoLancamento: 2021,
+    nota: 7.8,
+    genero: "super-heroi"
+);
 
 // Exibe apenas o ano de lançamento do segundo filme
 echo $filme["ano"] . PHP_EOL;
