@@ -1,5 +1,5 @@
 <?php
-require_once "funcoes.php";
+require_once __DIR__ . "/funcoes.php";
 // Mensagem de boas-vindas ao sistema
 echo "Bem vindo(a) ao screen-match" . PHP_EOL;
 
@@ -66,3 +66,6 @@ $posicaoDoisPontos = strpos($filme['nome'], ':');
 var_dump($posicaoDoisPontos);
 
 var_dump(substr($filme['nome'], 0, $posicaoDoisPontos));
+
+$filmeComoStringJson = json_encode($filme);
+file_put_contents(__DIR__ . "/filmes.json", $filmeComoStringJson);
