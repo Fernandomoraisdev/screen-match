@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . "/funcoes.php";
+require __DIR__ . "/src/funcoes.php";
 // Mensagem de boas-vindas ao sistema
 echo "Bem vindo(a) ao screen-match" . PHP_EOL;
 
@@ -8,7 +8,7 @@ $nomeFilme = "Top Gun - Maverick"; // Nome do filme que estamos avaliando
 $anoLancamento = 2022; // Ano de lançamento do filme
 
 // Processamento das notas recebidas como argumentos na linha de comando
-$quantidadeDeNotas = $argc - 1; // $argc conta quantos argumentos foram passados, subtraímos 1 para ignorar o nome do script
+$quantidadeDeNotas = $argc - 1; // $argc conta quantos argumentos foram passados, subtraíndo 1 para ignorar o nome do script
 $notas = []; // Array vazio para armazenar as notas
 
 // Loop para coletar todas as notas passadas como argumento
