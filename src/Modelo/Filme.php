@@ -5,21 +5,31 @@
 //dentro dessa classe uma variavel nome que vai receber um tipo string e cada uma variavel esta sendo tipada
 //de acordo com o que recebe.
 class Filme {
-    public string $nome;
-    public int $anoLancamento;
-    public string $genero;
-    public array $notas = [];
+    private string $nome = 'Nome Padrao';
+    private int $anoLancamento = 2025;
+    private string $genero = 'acao';
+    private array $notas = [];
 
-    function avalia(float $nota): void
+    public function avalia(float $nota): void
     {
         $this->notas[] = $nota;
     }
 
-    function media(): float
+    public function media(): float
     {
-        $somaNotas =  array_sum($this->notas);
-        $quantidadeNotas = count($this->notas);
+        $somaNotas =  array_sum($this -> notas);
+        $quantidadeNotas = count($this -> notas);
 
         return $somaNotas / $quantidadeNotas;
+    }
+
+    public function anoLancamento(): int
+    {
+        return $this -> anoLancamento;
+    }
+
+    public function defineAnoLancamento(int $anoLancamento): void
+    {
+        $this -> anoLancamento = $anoLancamento;
     }
 }
