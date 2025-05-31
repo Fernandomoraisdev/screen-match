@@ -4,12 +4,16 @@
 //que permite que a gente consiga identificar que temos uma classe do tipo Filme e tamos mais abaixo
 //dentro dessa classe uma variavel nome que vai receber um tipo string e cada uma variavel esta sendo tipada
 //de acordo com o que recebe.
-class Filme {
-    private string $nome = 'Nome Padrao';
-    private int $anoLancamento = 2025;
-    private string $genero = 'acao';
-    private array $notas = [];
-
+class Filme
+{
+    private array $notas;
+    public function __construct(
+        public readonly string $nome,
+        public readonly int $anoLancamento,
+        public readonly string $genero
+    ){
+        $this->notas = [];
+    }
     public function avalia(float $nota): void
     {
         $this->notas[] = $nota;
@@ -21,15 +25,5 @@ class Filme {
         $quantidadeNotas = count($this -> notas);
 
         return $somaNotas / $quantidadeNotas;
-    }
-
-    public function anoLancamento(): int
-    {
-        return $this -> anoLancamento;
-    }
-
-    public function defineAnoLancamento(int $anoLancamento): void
-    {
-        $this -> anoLancamento = $anoLancamento;
     }
 }
