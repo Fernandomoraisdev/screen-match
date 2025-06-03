@@ -4,27 +4,15 @@
 //que permite que a gente consiga identificar que temos uma classe do tipo Filme e tamos mais abaixo
 //dentro dessa classe uma variavel nome que vai receber um tipo string e cada uma variavel esta sendo tipada
 //de acordo com o que recebe.
-class Filme
+class Filme extends Titulo
 {
     private array $notas;
     public function __construct(
-        public readonly string $nome,
-        public readonly int $anoLancamento,
-        public readonly Genero $genero,
+        string $nome,
+        int $anoLancamento,
+        Genero $genero,
         public readonly int $duracaoEmMinutos,
     ){
-        $this->notas = [];
-    }
-    public function avalia(float $nota): void
-    {
-        $this->notas[] = $nota;
-    }
-
-    public function media(): float
-    {
-        $somaNotas =  array_sum($this -> notas);
-        $quantidadeNotas = count($this -> notas);
-
-        return $somaNotas / $quantidadeNotas;
+        parent::__construct($nome, $anoLancamento, $genero);
     }
 }

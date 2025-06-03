@@ -1,5 +1,7 @@
 <?php
 require __DIR__ . "/src/Modelo/Genero.php";
+require __DIR__ . "/src/Modelo/Titulo.php";
+require __DIR__ . "/src/Modelo/Serie.php";
 require __DIR__ . "/src/Modelo/Filme.php";
 
 echo "Bem-Vindo ao Screen-Match\n";
@@ -25,3 +27,11 @@ $filme->nota = [0];
 echo $filme->media() . "\n";
 
 echo $filme -> anoLancamento . "\n";
+
+$serie =new Serie('Lost', 2007, Genero::Drama, 10, 20, 40);
+
+echo $serie->anoLancamento . "\n";
+
+$serie->avalia(8);
+
+echo $serie->media() . "\n";
